@@ -4,6 +4,29 @@ version: '2'
   version: 1.0.0
   description: |
     smart community for qdone
+  minimum_rancher_version: v0.59.0
+  uuid: harbor-0
+  questions:
+    - variable: "harborhostname"
+      description: "Harbor IP, HOSTNAME or FQDN as used to acces it from the Docker CLI"
+      label: "IP/Hostname/FQDN:"
+      required: true
+      default: myregistry
+      type: "string"
+    - variable: "harbor_admin_password"
+      label: "Harbor password:"
+      description: |
+        Harbor admin password
+      default: Vmware123!
+      required: true
+      type: "string"
+    - variable: "harborhostlabel"
+      label: "Harbor will be deployed on the host with this label (default: harbor-host=true)"
+      description: |
+        Harbor host label
+      default: harbor-host=true
+      required: true
+      type: "string"
 services:
   nginx:
     scale: 1
