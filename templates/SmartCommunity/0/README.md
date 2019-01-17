@@ -1,14 +1,8 @@
-##Harbor 0.5.0 deployment: single-host (revision 0)
+智慧城区（社区）是指社区管理的一种新理念，是新形势下社会管理创新的一种新模式。
+充分借助互联网、物联网，涉及到智能楼宇、智能家居、路网监控、个人健康与数字生
+活等诸多领域，充分发挥信息通信（ICT）产业发达、电信业务及信息化基础设施优良等
+优势。
 
-This version deploys `Harbor` 0.5.0 on a single host of a Cattle cluster.
-
-The host is identified, by default, by the `harbor-host=true` label (can be changed at deployment time to point to another key).
-
-Note that:
-- the `IP/Hostname/FQDN` parameter needs to be set to the exact same name you will use to access the registry (e.g. IP or FQDN of the host)
-- the host needs to have port `80` and port `443` free for use (the Harbor proxy container will bind to those ports)
-- this catalog entry only supports `http` (`https` access is not supported)
-- because only `http` is supported, the Docker Host pulling/pushing from/to Harbor needs to have the `--insecure-registry` flag properly configured
-- if you want to re-provision Harbor on the same Docker host and you want to use different inputs (e.g. a different password) you need to remove the `/data` directory on the host. If you fail to do so the new Harbor instance will use the same parameters entered in the previous deployment (saved in the `/data` directory)
-
-![](singlehost.png)
+通过建设 ICT 基础设施、认证、安全等平台和示范工程，加快产业关键技术攻关，构建
+城区 （社区）发展的智慧环境，形成基于海量信息和智能过滤处理的新的生活、产业发
+展、社会管理等模式，面向未来构建全新的城区（社区）形态。

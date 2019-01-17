@@ -33,8 +33,8 @@ services:
   # mysql
   mysql:
     hostname: mysql
-    #image: 192.168.8.154:5000/qdone/mysql:latest
-    image: mysql:5.7
+    image: 192.168.8.154:5000/qdone/smartc-mysql:latest
+    #image: mysql:5.7
     ports:
      - "3306:3306"
     environment:
