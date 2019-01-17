@@ -19,7 +19,9 @@ services:
     hostname: cloudbg
     image: 192.168.8.154:5000/qdone/qdcloud:latest
     command:
-    - java -jar /usr/local/qdcloud/qdcloud.jar 
+    - java 
+    - -jar 
+    - /usr/local/qdcloud/qdcloud.jar 
     links:
       - mysql:mysql
       - redis:redis
