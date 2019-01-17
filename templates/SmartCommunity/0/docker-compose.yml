@@ -1,0 +1,49 @@
+version: '2'
+services:
+  # load balance  
+  nginx:
+    image: 192.168.8.154:5000/qdone/smartc-nginx:latest
+    ports:
+      - "80:80"
+    links:
+      - pcmall:pcmall
+      - wxmall:wxmall
+      - cloudbg:cloudbg
+    depends_on:
+      - cloudbg
+      - pcmall
+      - wxmall
+  
+  # web-server
+  cloudbg:
+    hostname: cloudbg
+    image: 192.168.8.154:5000/qdone/qdcloud:latest 
+    links:
+      - mysql:mysql
+      - redis:redis
+ 
+  pcmall:
+    hostname: pcmall
+    image: 192.168.8.154:5000/qdone/pcmall:latest 
+
+  wxmall:
+    hostname: wxmall
+    image: 192.168.8.154:5000/qdone/wxmall:latest 
+
+  # mysql
+  mysql:
+    hostname: mysql
+    #image: 192.168.8.154:5000/qdone/mysql:latest
+    image: mysql:5.7
+    ports:
+     - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  
+  # redis
+  redis:
+    hostname: redis
+    image: 192.168.8.154:5000/qdone/redis:latest
+    command:
+    - /usr/local/bin/redis-server
+    - /etc/redis.conf

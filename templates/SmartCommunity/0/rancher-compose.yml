@@ -1,0 +1,25 @@
+version: '2'
+.catalog:
+  name: smart community
+  version: 1.0.0
+  description: |
+    smart community for qdone
+services:
+  nginx:
+    scale: 1
+    start_on_create: false
+  cloudbg:
+    scale: 1
+    start_on_create: false
+  pcmall:
+    scale: 1
+    start_on_create: false
+  wxmall:
+    scale: 1
+    start_on_create: false
+  mysql:
+    scale: 1
+    start_on_create: false
+  redis:
+    scale: 1
+    start_on_create: false

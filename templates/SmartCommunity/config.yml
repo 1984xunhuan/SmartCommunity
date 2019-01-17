@@ -1,0 +1,7 @@
+name: Smart Community
+description: |
+  Smart Community for qdone
+version: 1.0.0
+category: Private Container Registry
+projectURL: http://192.168.8.154/git/qdone/rancher.git 
+license: Apache License 2.0 
